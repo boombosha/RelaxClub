@@ -5,10 +5,13 @@ function sendData(formData) {
 
   //successful data submission
   XHR.addEventListener("load", function (event) {
+    //console.log(XHR.response);
+    // console.log(event);
     //alert("Отправлено!");
     feedbackField.value = '';
     feedbackUsernameField.value = '';
-
+    // event = XHR.response;
+    console.log(event);
     //
     const XHR = new XMLHttpRequest();
 
@@ -20,6 +23,7 @@ function sendData(formData) {
     XHR.open("POST", "http://localhost/api.php");
     XHR.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     XHR.send("method=messages&action=getList&offset=0&count=50");
+    
   });
 
   //error

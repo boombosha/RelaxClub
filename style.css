@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Ubuntu+Condensed');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Roboto:ital,wght@0,400;0,700;1,400&display=swap');
 
 .header {
   background: #000201;
@@ -535,19 +536,94 @@ body {
   opacity: 0.3;
 }
 
-.feedback {
-  height: 100vmin;
-  background-image: url(pic/golden-cutlery-with-textile-on-plate-on-dark-background-top-view.jpg);
-  background-size: cover;
-  display: grid;
-  grid-template-columns: 2fr 3fr;
-  
-  
+/* Form */
+.feedbacks-form-container {
+  flex-direction:column;
+  display: flex;
+  background: rgba(0, 0, 0, 0.6);
+  margin: 0 auto;
+  height:100vmin;
+  justify-content: center;
 }
 
-/* Form */
+.feedbacks-form-section {
+  background-image: url(pic/a-restaurant-BLUR.jpg);
+  background-size: cover;
+}
+
+.feedbacks-form-container h2 {
+  text-align: center;
+  font-size: 3rem;
+  font-family: Merriweather, serif;
+  /* margin-top: 1%; */
+  margin-bottom: 0;
+  font-weight: 100;
+}
+
+.feedbacks-form-container p {
+  text-align: center;
+  /* margin-top: 1re; */
+  font-family: Merriweather, serif;
+  /* font-family: 'Comfortaa', cursive; */
+  font-size: 1rem;
+  margin-top: -15px;
+}
 
 .feedback-form {
+  display: flex;
+  flex-direction: column;
+  min-width: 600px;
+  margin: 0 auto;
+  padding-top: 10px;
+}
+
+.feedback-username-field,
+.feedback-field {
+  padding: 10px 12px;
+  background-color: transparent;
+  border: 1px solid white;
+  color: #cecbcb;
+  margin: 10px;
+  font-family: Merriweather, serif;
+}
+
+.feedback-form-buttons {
+  text-align: center;
+}
+
+.feedback-form-buttons input {
+  background-color: transparent;
+  color: #cecbcb;
+  border: 1px solid white;
+  padding: 5px;
+  font-family: 'Comfortaa', cursive;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.feedback-form-buttons input:hover {
+  border: 1px solid aqua;
+  /* background-color: aqua; */
+  color: aqua;
+}
+
+.feedback-form-buttons input:first-of-type {
+  border: 1px solid aqua;
+  color: aqua;
+}
+
+.feedback-form-buttons input:first-of-type:hover {
+  background-color: aqua;
+  border: 1px solid white;
+  color: #000201;
+}
+
+.H {
+  color: rgb(0, 255, 255);
+}
+
+
+/* .feedback-form {
   margin: auto 40px;
   border-radius: 10px;
   background-color: rgba(156, 191, 205, 0.3);
@@ -642,7 +718,7 @@ input[disabled] {
 .buttons {
   margin-top: 10px;
   text-align: center;
-}
+} */
 
 /* Rate 
 .rating-area {
@@ -688,6 +764,14 @@ input[disabled] {
 }
 
 */
+
+.feedback {
+  height: 100vmin;
+  background-image: url(pic/golden-cutlery-with-textile-on-plate-on-dark-background-top-view.jpg);
+  background-size: cover;
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+}
 
 .feedback-container {
   margin: auto 35px;

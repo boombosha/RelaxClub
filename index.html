@@ -12,9 +12,9 @@
        <ul class="menu-header">
         <li><a href="#food-container-id">Меню</a></li>
         <li><a href="#About">О нас</a></li>
-        <li><a href="#Contacts">Контакты</a></li>
         <li><a href="#Feedbacks">Отзывы</a></li>
-        </ul>
+        <li><a href="#Contacts">Контакты</a></li>
+       </ul>
     </div>
     <h1><span>R</span>elax Club</h1>
     <p>Добро пожаловать в Relax Club! Место, где вкусно и уютно. 
@@ -569,39 +569,64 @@
 
   
 
-  <section id="Feedbacks" class="feedback">
-    <form action="http://a0842520.xsph.ru/api.php" method="post" oninput="" class="feedback-form">
-      <fieldset>
-        <legend>Ваш отзыв</legend>
-        <div class="half-width">
-          <input name="method" value="messages" style="display: none;">
-          <input name="action" value="add" style="display: none;">
-          <label for="1">Ваше имя</label>
-          <input id="1" type="text" value="" class="feedback-username-field" name="author">
-        </div>
-        <!--
-        <label for="2">Оценка</label>
-        <div class="rating-area">
-          <input type="radio" id="star-5" name="rating" value="5">
-          <label for="star-5" title="Оценка «5»"></label>	
-          <input type="radio" id="star-4" name="rating" value="4">
-          <label for="star-4" title="Оценка «4»"></label>    
-          <input type="radio" id="star-3" name="rating" value="3">
-          <label for="star-3" title="Оценка «3»"></label>  
-          <input type="radio" id="star-2" name="rating" value="2">
-          <label for="star-2" title="Оценка «2»"></label>    
-          <input type="radio" id="star-1" name="rating" value="1">
-          <label for="star-1" title="Оценка «1»"></label>
-        </div>
-        -->
-        <label for="4">Текст отзыва</label>
-    			<textarea id="4" rows="5" class="feedback-field" name="content"></textarea>
-          <div class="buttons">
-            <input type="submit" value="Оценить">
-            <input type="reset" value="Сбросить">
+  <!-- <section id="Feedbacks-form" class="feedbacks-form">
+    <div class="feedbacks-form-container">
+      <h2>Напишите нам</h2>
+      <p>Мы всегда будем рады услышать Ваше мнение!</p>
+      <form action="http://a0842520.xsph.ru/api.php" method="post" oninput="" class="feedback-form">
+        <fieldset>
+          <legend>Ваш отзыв</legend>
+          <div class="half-width">
+            <input name="method" value="messages" style="display: none;">
+            <input name="action" value="add" style="display: none;">
+            <label for="1">Ваше имя</label>
+            <input id="1" type="text" value="" class="feedback-username-field" name="author">
           </div>
-      </fieldset>
-    </form>
+          
+          <label for="2">Оценка</label>
+          <div class="rating-area">
+            <input type="radio" id="star-5" name="rating" value="5">
+            <label for="star-5" title="Оценка «5»"></label>	
+            <input type="radio" id="star-4" name="rating" value="4">
+            <label for="star-4" title="Оценка «4»"></label>    
+            <input type="radio" id="star-3" name="rating" value="3">
+            <label for="star-3" title="Оценка «3»"></label>  
+            <input type="radio" id="star-2" name="rating" value="2">
+            <label for="star-2" title="Оценка «2»"></label>    
+            <input type="radio" id="star-1" name="rating" value="1">
+            <label for="star-1" title="Оценка «1»"></label>
+          </div>
+          
+          <label for="4">Текст отзыва</label>
+            <textarea id="4" rows="5" class="feedback-field" name="content"></textarea>
+            <div class="buttons">
+              <input type="submit" value="Оценить">
+              <input type="reset" value="Сбросить">
+            </div>
+        </fieldset>
+      </form>
+    </div>
+  </section> -->
+
+  <section id="Feedbacks-form" class="feedbacks-form-section">
+    <div class="feedbacks-form-container">
+      <h2><span class="R H">H</span>апишите нам</h2>
+      <p>Мы всегда будем рады услышать Ваше мнение!</p>
+      <form action="http://localhost/api.php" method="post" oninput="" class="feedback-form">
+        <input name="method" value="messages" style="display: none;">
+        <input name="action" value="add" style="display: none;">
+        <input id="1" type="text" value="" class="feedback-username-field" name="author" placeholder="Введите Ваше имя">
+        <textarea id="4" rows="5" class="feedback-field" name="content" placeholder="Напишите Ваш отзыв"></textarea>
+        <div class="feedback-form-buttons">
+          <input type="submit" value="Оценить">
+          <input type="reset" value="Сбросить">
+        </div>
+      </form>
+    </div> 
+  </section>
+
+  
+  <section id="Feedbacks" class="feedback">
       <div class="feedback-container">
         <h2>Отзывы посетителей</h2>
         <!--<ul class="feedback-list">
