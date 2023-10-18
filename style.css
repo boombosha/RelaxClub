@@ -768,10 +768,10 @@ input[disabled] {
 
 .feedback {
   height: 100vmin;
-  /* background-image: url(pic/golden-cutlery-with-textile-on-plate-on-dark-background-top-view.jpg); */
-  background-size: cover;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  background: rgb(2,0,36);
+  background: linear-gradient(81deg, rgba(2,0,36,1) 0%, rgba(13,12,33,1) 50%, rgba(19,75,87,1) 100%);
 }
 
 .feedback-title {
@@ -779,9 +779,8 @@ input[disabled] {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-image: url(pic/pizza-on-a-black-surface.jpg);
+  background-image: url(pic/pizza-on-a-black-surface1.png);
   background-size: cover;
-  
 }
 
 .feedback-title h2 {
@@ -803,55 +802,70 @@ input[disabled] {
   font-family: 'Comfortaa', cursive;
 }
 
-
-
 .feedback-container {
   margin: auto 35px;
   overflow: auto;
-  /* border-radius: 10px; */
-  /* background-color: rgba(156, 191, 205, 0.3);
-  box-shadow: 0 0 10px #ccc; */
   height: 450px;
   font-family: 'Comfortaa', cursive;
   opacity: 0.9;
-  /* border: solid 2px aqua; */
 }
-
 
 .feedback-container h2 {
   text-align: center;
 }
 
-.feedback-text {
-  color: black;
-}
-
-.user-feedback {
-  color: black;
-  font-weight: bold;
-  display: block;
-}
-
 .feedback-items-container {
-  border-radius: 15px;
-  background-color: #b0d8d6;
+  border-radius: 10px;
+  padding: 8px;
+  background-color: rgba(137, 179, 190, .6);
   display: block;
-  /* padding: 1em; */
   margin: 1em;
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 10px rgb(0, 0, 0);
   width: 400px;
-  border: solid 3px white;
-  
+  /* border: solid 2px white; */
 }
 
 .feedback-items-container:nth-child(even) {
   margin-left: auto;
-  background-color: #6d71e5;
-  color: black;
+  /* background-color: #6d71e5; */
+  background-color: rgba(109, 113, 229, .5);
+  color: white;
 }
 
 .feedback-list {
   padding-left: 15px;
+  display: grid;
+  grid-template-columns: 70px 1fr 1fr;
+  grid-template-areas:  "citate-img feedback-author feedback-date"
+                        "citate-img feedback-text feedback-text";            
+}
+
+.feedback-text {
+  color: white;
+  grid-area: feedback-text;
+  font-size: 14px;
+  /* padding-bottom: 15px; */
+  
+}
+
+.feedback-author {
+  color: white;
+  font-weight: bold;
+  display: block;
+  grid-area: feedback-author;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 20px;
+  /* font-family: Merriweather, serif; */
+  justify-self: start;
+  font-weight: 100;
+
+}
+
+.feedback-date {
+  grid-area: feedback-date;
+  font-size: 13px;
+  justify-self: start;
 }
 
 .feedback-list li {
@@ -861,7 +875,7 @@ input[disabled] {
 
 .citate-svg {
   width: 40px;
-  border-radius: 50%;
+  border-radius: 35%;
   background-color: white;
   padding: 10px;
   display: block;
@@ -870,6 +884,9 @@ input[disabled] {
 .citate-img {
   width: 60px;
   display: block;
+  grid-area: citate-img;
+  justify-self: start;
+  
 }
 
 .feedback-items-container:nth-child(odd) .path-svg {
@@ -886,6 +903,12 @@ input[disabled] {
   border: none;
   background-color: transparent;
   cursor: pointer;
+  display: flex;
+  margin-left: auto;
+}
+
+.likes-number {
+  padding-left: 15px;
 }
 
 .feedback-items-container .heart:focus, 
