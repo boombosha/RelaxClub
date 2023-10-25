@@ -80,6 +80,33 @@ function msgRequestHandler (feedbackArray) {
     }
     
     container.appendChild(clonedElement);    
+
+    // Кнопка "Загрузить ещё"
+    let loadMoreButton = document.querySelector('.load-more');
+    let numToShow = 3;
+    let numInList = document.querySelectorAll('.feedback-items-container').length;
+    let feedbacks = document.querySelectorAll('.feedback-items-container');
+
+    for (let k = numToShow; k < numInList; k++) {
+      feedbacks[k].style.display = "none";
+    };
+
+    loadMoreButton.onclick = function() {
+      console.log('button load more');
+      numToShow += 3;
+      // let numInList = document.querySelectorAll('.feedback-items-container').length;
+      if (numToShow <= numInList+2) {
+        for (let j=0; j<numToShow; j++){
+          feedbacks[j].style.display = "block";
+        }
+      }
+    }
+    
+    
+  
+   
+
+
     
     // Дата отзывов
     let months = ["Января", "Февраля", "Марта", "Апреля", "Мая", "Июня", 
@@ -162,6 +189,7 @@ window.addEventListener("load", function () {
 
   XHR.addEventListener("load", function () {
     msgRequestHandler(XHR.response.response.messages);
+  
   });
 
   XHR.responseType = 'json';
@@ -169,3 +197,6 @@ window.addEventListener("load", function () {
   XHR.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
   XHR.send("method=messages&action=getList&offset=0&count=50");
 });
+
+
+

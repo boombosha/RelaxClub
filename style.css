@@ -148,8 +148,10 @@ body {
 }
 
 .food-container {
-  background-image: url(pic/dark.jpg);
-  background-size:contain;
+  /* background-image: url(pic/dark.jpg);
+  background-size:contain; */
+  background: rgb(102,125,127);
+  background: linear-gradient(81deg, rgba(102,125,127,1) 0%, rgba(21,21,21,1) 56%);
 }
 
 @import url('https://fonts.googleapis.com/css?family=Ubuntu+Condensed');
@@ -290,7 +292,8 @@ body {
   font-size: 18px;
   line-height: 21px;
   margin-top: auto;
-  font-family: 'Comfortaa', cursive;
+  font-family: "Segoe UI";
+  /* font-family: 'Comfortaa', cursive; */
 }
 
 .card-price-value {
@@ -300,7 +303,9 @@ body {
 .card-title {
   margin: 0;
   margin-bottom: 10px;
-  font-family: 'Comfortaa', cursive;
+  /* font-family: 'Comfortaa', cursive; */
+  font-family: "Segoe UI";
+  font-weight: 400;
   text-align: center;
 }
 
@@ -334,6 +339,10 @@ body {
   color: black;
   border-color: currentColor;
   background-color: wheat;
+}
+
+.hidden {
+  display: none !important;
 }
 
 .about-us {
@@ -770,6 +779,8 @@ input[disabled] {
   height: 100vmin;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-areas: "feedback-title feedback-container"
+                       "feedback-title load-more";
   background: rgb(2,0,36);
   background: linear-gradient(81deg, rgba(2,0,36,1) 0%, rgba(13,12,33,1) 50%, rgba(19,75,87,1) 100%);
 }
@@ -781,6 +792,7 @@ input[disabled] {
   justify-content: center;
   background-image: url(pic/pizza-on-a-black-surface1.png);
   background-size: cover;
+  grid-area: feedback-title;
 }
 
 .feedback-title h2 {
@@ -808,6 +820,7 @@ input[disabled] {
   height: 450px;
   font-family: 'Comfortaa', cursive;
   opacity: 0.9;
+  grid-area: feedback-container;
 }
 
 .feedback-container h2 {
@@ -921,6 +934,9 @@ input[disabled] {
   background-image: url(/icons/icon-heart-added.png);
 }
 
+.load-more {
+  grid-area: load-more;
+}
 /* Кнопка корзины */
 .cart {
   width: 15px;
