@@ -8,6 +8,7 @@ function sendData(formData) {
     //console.log(XHR.response);
     // console.log(event);
     //alert("Отправлено!");
+    feedbackFormPopup();
     feedbackField.value = '';
     feedbackUsernameField.value = '';
     // event = XHR.response;
@@ -200,5 +201,17 @@ window.addEventListener("load", function () {
   XHR.send("method=messages&action=getList&offset=0&count=50");
 });
 
+function feedbackFormPopup() {
+  let ffPopup = document.querySelector('.feedback-form-popup');
+  let ffPopupCloseBtn = document.querySelector('.feedback-popup-close');
+  let body = document.body;
 
+  ffPopup.classList.add("popup--open");
+  body.classList.add("lock");
 
+  ffPopupCloseBtn.onclick = function() {
+    ffPopup.classList.remove("popup--open");
+    body.classList.remove("lock");
+  }
+
+};
