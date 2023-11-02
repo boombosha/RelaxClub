@@ -40,9 +40,11 @@ function sendData(formData) {
 let feedbackField = document.querySelector('.feedback-field');
 let feedbackUsernameField = document.querySelector('.feedback-username-field');
 
-function msgRequestHandler (feedbackArray) {
+function msgRequestHandler(feedbackArray) {
   
-  console.log(feedbackArray);
+  //console.log(feedbackArray.reverse());
+  feedbackArray.reverse();
+  //console.log(result);
 
   let container = document.querySelector('.feedback-container');
   let template = document.querySelector('#element-template').content;
@@ -102,36 +104,36 @@ function msgRequestHandler (feedbackArray) {
       }
     }
     
-    
-  
-   
 
-
-    
     // Дата отзывов
     let months = ["Января", "Февраля", "Марта", "Апреля", "Мая", "Июня", 
                 "Июля", "Августа", "Сентября", "Октября", "Ноября", "Декабря"];
     let msgTime = clonedElement.querySelector('.date').innerText;             
     let myDate = new Date(msgTime);
     let currentDate = new Date();
+    currentDate.setHours()
     let newMsgTime = document.querySelectorAll('.date');
     const MS_IN_24HOURS = 86400000;
     //let hoursMinutes = myDate.getHours() + ":" + myDate.getMinutes();
+
+    currentDate.setHours(0, 0, 0, 0);
     const shortTime = new Intl.DateTimeFormat("ru", {
       timeStyle: "short",
     });
     let hoursMinutes = shortTime.format(myDate);
 
-    if (currentDate-myDate < MS_IN_24HOURS) {
-      newMsgTime[i].innerText = "сегодня" + ", " + hoursMinutes;
-    }
-    else if (currentDate-myDate < MS_IN_24HOURS*2) {
+    if ((currentDate-myDate) < (MS_IN_24HOURS*2) && (currentDate-myDate) > MS_IN_24HOURS) {
       newMsgTime[i].innerText = "вчера" + ", " + hoursMinutes;
+    }
+    else if ((currentDate-myDate) < MS_IN_24HOURS) {
+      newMsgTime[i].innerText = "сегодня" + ", " + hoursMinutes;
     }
     else {
       newMsgTime[i].innerText = myDate.getDate() + " " + months[myDate.getMonth()] + " " + myDate.getFullYear() + ", " + hoursMinutes;
     }
 
+    console.log(currentDate);
+    
     // if (myDate.getDate() == currentDate.getDate() && 
     //     myDate.getMonth() == currentDate.getMonth() && 
     //     myDate.getFullYear() == currentDate.getFullYear()) {
