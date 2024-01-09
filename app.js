@@ -12,7 +12,7 @@ function sendData(formData) {
     feedbackField.value = '';
     feedbackUsernameField.value = '';
     // event = XHR.response;
-    console.log(event);
+    // console.log(event);
     //
     const XHR = new XMLHttpRequest();
 
@@ -64,7 +64,7 @@ function msgRequestHandler(feedbackArray) {
         }
         else {
           element.dataset.msgId = feedbackArray[i].id;
-          console.log('element-id:' + element.dataset.msgId);
+          // console.log('element-id:' + element.dataset.msgId);
           // Likes
           let heart = clonedElement.querySelector('.heart');
           let like = clonedElement.querySelector('.likes');
@@ -95,7 +95,7 @@ function msgRequestHandler(feedbackArray) {
     };
 
     loadMoreButton.onclick = function() {
-      console.log('button load more');
+      // console.log('button load more');
       numToShow += 3;
       // let numInList = document.querySelectorAll('.feedback-items-container').length;
       if (numToShow <= numInList+2) {
@@ -112,43 +112,43 @@ function msgRequestHandler(feedbackArray) {
     let msgTime = clonedElement.querySelector('.date').innerText;             
     let myDate = new Date(msgTime);
     let currentDate = new Date();
-    currentDate.setHours()
+    // currentDate.setHours(0, 0, 0);
     let newMsgTime = document.querySelectorAll('.date');
-    const MS_IN_24HOURS = 86400000;
-    //let hoursMinutes = myDate.getHours() + ":" + myDate.getMinutes();
+    // const MS_IN_24HOURS = 86400000;
+    let hoursMinutes = myDate.getHours() + ":" + myDate.getMinutes();
 
-    currentDate.setHours(0, 0, 0, 0);
-    const shortTime = new Intl.DateTimeFormat("ru", {
-      timeStyle: "short",
-    });
-    let hoursMinutes = shortTime.format(myDate);
+    // currentDate.setHours(0, 0, 0, 0);
+    // const shortTime = new Intl.DateTimeFormat("ru", {
+    //   timeStyle: "short",
+    // });
+    // let hoursMinutes = shortTime.format(myDate);
 
-    if ((currentDate-myDate) < (MS_IN_24HOURS*2) && (currentDate-myDate) > MS_IN_24HOURS) {
-      newMsgTime[i].innerText = "вчера" + ", " + hoursMinutes;
-    }
-    else if ((currentDate-myDate) < MS_IN_24HOURS) {
-      newMsgTime[i].innerText = "сегодня" + ", " + hoursMinutes;
-    }
-    else {
-      newMsgTime[i].innerText = myDate.getDate() + " " + months[myDate.getMonth()] + " " + myDate.getFullYear() + ", " + hoursMinutes;
-    }
-
-    console.log(currentDate);
-    
-    // if (myDate.getDate() == currentDate.getDate() && 
-    //     myDate.getMonth() == currentDate.getMonth() && 
-    //     myDate.getFullYear() == currentDate.getFullYear()) {
-    //   newMsgTime[i].innerText = "сегодня" + ", " + myDate.getHours() + ":" + myDate.getMinutes();
-    // } 
-    // else if (myDate.getDate() == currentDate.getDate()-1 && 
-    //     myDate.getMonth() == currentDate.getMonth() && 
-    //     myDate.getFullYear() == currentDate.getFullYear()) {
-    // newMsgTime[i].innerText = "вчера" + ", " + myDate.getHours() + ":" + myDate.getMinutes();
-    // }    
+    // if ((currentDate-myDate) < (MS_IN_24HOURS*2) && (currentDate-myDate) > MS_IN_24HOURS) {
+    //   newMsgTime[i].innerText = "вчера" + ", " + hoursMinutes;
+    // }
+    // else if ((currentDate-myDate) < MS_IN_24HOURS) {
+    //   newMsgTime[i].innerText = "сегодня" + ", " + hoursMinutes;
+    // }
     // else {
-    // newMsgTime[i].innerText = fullDate;
+    //   newMsgTime[i].innerText = myDate.getDate() + " " + months[myDate.getMonth()] + " " + myDate.getFullYear() + ", " + hoursMinutes;
+    // }
+
+    // console.log(currentDate);
+    
+    if (myDate.getDate() == currentDate.getDate() && 
+        myDate.getMonth() == currentDate.getMonth() && 
+        myDate.getFullYear() == currentDate.getFullYear()) {
+      newMsgTime[i].innerText = "сегодня" + ", " + myDate.getHours() + ":" + myDate.getMinutes();
+    } 
+    else if (myDate.getDate() == currentDate.getDate()-1 && 
+        myDate.getMonth() == currentDate.getMonth() && 
+        myDate.getFullYear() == currentDate.getFullYear()) {
+    newMsgTime[i].innerText = "вчера" + ", " + myDate.getHours() + ":" + myDate.getMinutes();
+    }    
+    else {
+    newMsgTime[i].innerText = myDate.getDate() + " " + months[myDate.getMonth()] + " " + myDate.getFullYear() + ", " + hoursMinutes;
     // console.log(myDate.getDate());
-    //}
+    }
     
   } 
   

@@ -829,6 +829,7 @@ input[disabled] {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-areas: "feedback-title feedback-container"
+                       "feedback-title feedback-container"
                        "feedback-title load-more";
   background: rgb(2,0,36);
   background: linear-gradient(81deg, rgba(2,0,36,1) 0%, rgba(13,12,33,1) 50%, rgba(19,75,87,1) 100%);
@@ -866,7 +867,7 @@ input[disabled] {
 .feedback-container {
   margin: auto 35px;
   overflow: auto;
-  height: 450px;
+  height: 650px;
   font-family: 'Comfortaa', cursive;
   opacity: 0.9;
   grid-area: feedback-container;
@@ -983,9 +984,85 @@ input[disabled] {
   background-image: url(/icons/icon-heart-added.png);
 }
 
-.load-more {
+.loader {
   grid-area: load-more;
+  cursor: pointer;
+  text-align: center;
+  cursor: unset;
 }
+
+.load-more {
+  background: none;
+  color: white;
+  border: none;
+  font-family: 'Comfortaa', cursive;
+  padding: 5px;
+  cursor: unset;
+}
+
+
+.load-arrows {
+  width: 50px;
+  height: 50px;
+  border: 4px solid aqua;
+  border-radius: 50%;
+  /* animation: spin 5s linear infinite; */
+  position: relative;
+  cursor: pointer;
+
+  &:before,
+  &:after{
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-top: 4px solid aqua;
+    border-right: 4px solid aqua;
+    position: absolute;
+    top: 5px;
+    left: -5px;
+    box-shadow: 4px -4px 0 4px #102839;
+  }
+  
+  &:after {
+    top: 39px;
+    left: 35px;
+    border: none;
+    border-bottom: 4px solid aqua;
+    border-left: 4px solid aqua;
+    box-shadow: -4px 4px 0 4px #102839;
+  }
+}
+
+.spin-animation {
+  animation: spin 0.5s linear;
+  /* cursor: pointer; */
+}
+
+.spin-animation-long {
+  animation: spin 1s linear;
+  /* cursor: pointer; */
+}
+
+@keyframes spin {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+@keyframes spin1 {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+
 /* Кнопка корзины */
 .cart {
   width: 15px;
@@ -1161,4 +1238,22 @@ input[disabled] {
 
 .lock {
   overflow-y: hidden;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+.star {
+  transform-style: preserve-3d;
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  color: red;
+}
+.star:before {
+  position: absolute;
+  content: '\2726';
+  color: inherit;
+  inset: 0;
+  /* box-shadow: 0 0 1em .5em #a3c2;
+  filter: drop-shadow(0 0 .5em white); */
+  text-shadow: 0 0 .8em #fff5;
 }
